@@ -1,0 +1,23 @@
+name: Basic Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello, GitHub Actions!"
+
+      - name: Run a script
+        run: |
+          echo "This is a multi-line step"
+          ls -la
+          
